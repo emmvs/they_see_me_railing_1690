@@ -1,0 +1,29 @@
+<h1>Welcome Home! 👻</h1>
+
+<!-- Puts Embedded Ruby -->
+<!-- <%=  %> -->
+<p>Now is <%= Time.now %></p>
+
+<!-- Embedded Ruby -->
+<!-- <% %> -->
+<%# students = ["Aika", "Bruna", "Aude", "Joachim", "Martin", "Mathieu", "Kenta", "William", "Hugo", "Luk", "Guillaume"] %>
+
+<!--            Where to? -->
+<form action="/home" method="get">
+  <input type="text" value="<%= params[:user_input] %>" name="user_input" placeholder="Who are you looking for?">
+  <input type="submit">
+</form>
+
+<%= params[:user_input] %>
+<%= params["user_input"] %>
+
+<ul>
+<% @students.each do |student| %>
+  <li><%= student %></li>
+<% end %>
+</ul>
+
+<!-- <a class="btn btn-outline-primary" href="/very_fun">Go this way for a good time 👉🏻</a> -->
+
+<!-- Rails Helper -->
+<%= link_to 'Go this way for a good time 👉🏻', very_very_fun_path, class: "btn btn-outline-primary" %>
